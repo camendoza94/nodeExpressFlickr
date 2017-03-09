@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import Search from './Search';
 import PhotoColumn from './PhotoColumn';
-const ROOT_URL = "http://localhost:9000";
 
 class App extends Component {
 
@@ -11,7 +10,7 @@ class App extends Component {
     super(props);
     
     this.state = {
-      photos: []
+      photos: [] //Hacer uno por cada color
     };
   }
 
@@ -25,7 +24,7 @@ class App extends Component {
     })
     .then(function(data) {
       console.log("Gotit!");
-      this.setState({
+      this.setState({ //Cambiar a un callback
         photos: data.photos
       });
     })

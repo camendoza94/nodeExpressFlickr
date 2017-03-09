@@ -10,38 +10,51 @@ class App extends Component {
     super(props);
     this.colors=["red","orange", "yellow", "green", "blue","indigo", "violet" ];
     this.state = {
-      photos: [] //Hacer uno por cada color
+      red: [],
+      orange: [],
+      yellow: [],
+      green: [],
+      blue: [],
+      indigo: [],
+      violet: []
     };
   }
 
   queryFlickr(query) {
-    fetch('/flickr/' + query)
-    .then(function(response) {
-      console.log("Primer then");
-      if(response.ok) {
-        return response.json();
-      }
-      throw new Error('Network response was not ok.');
-    })
-    .then(data => {
-      console.log("Gotit!");
-      this.setState({
-        photos: data.photos
+    var i = 0;
+    for (const color of this.colors) {
+      fetch('/flickr/' + query + ',' + color)
+      .then(function(response) {
+        if(response.ok) {
+          return response.json();
+        }
+        throw new Error('Network response was not ok.');
+      })
+      .then(data => {
+        console.log("Got it!");
+        var newState = {};
+        newState[color] = data.photos;
+        this.setState(newState);
+      })
+      .catch(function(error) {
+        console.log('There has been a problem with your fetch operation: ' + error.message);
       });
-    })
-    .catch(function(error) {
-      console.log('There has been a problem with your fetch operation: ' + error.message);
-    });
-  }
-  render() {
-    return (
-      <div>
-      <Search queryFlickr={this.queryFlickr.bind(this)} />
-      <PhotoColumn photos={this.state.photos} />
-      </div>
-      )
-
+      i++;
     }
   }
+  render() {
+   var columns = [];
+   for (const color of this.colors) {
+    columns.push(<PhotoColumn photos={this.state[color]} />);
+  }
+  return (
+  <div>
+  <Search queryFlickr={this.queryFlickr.bind(this)} />
+  {columns}
+  </div>
+  )
 
-  export default App;
+}
+}
+
+export default App;

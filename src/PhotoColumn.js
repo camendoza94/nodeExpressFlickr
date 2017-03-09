@@ -5,7 +5,7 @@ class PhotoColumn extends Component{
 	render(){
 		if(this.props.photos.photo) {
 			return(
-				<div className="col-md-2">
+				<div className="col-md-2 column">
 				{this.props.photos.photo.map((photo) => {
 					return <Photo photo={photo}/>
 				})}

@@ -3,15 +3,20 @@ import Photo from './Photo';
 
 class PhotoColumn extends Component{
 	render(){
-		if(this.props.photos) {
+		if(this.props.photos.photo) {
 			return(
 				<div className="col-md-2">
-				{this.props.photos.map((photo, index) => {
+				{this.props.photos.photo.map((photo) => {
 					return <Photo photo={photo}/>
 				})}
 				</div>
 				)
-			}
+		}
+		else {
+			return(
+				<div></div>
+				)
 		}
 	}
-	export default PhotoColumn;
+}
+export default PhotoColumn;

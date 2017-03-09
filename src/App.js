@@ -8,7 +8,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    
+    this.colors=["red","orange", "yellow", "green", "blue","indigo", "violet" ];
     this.state = {
       photos: [] //Hacer uno por cada color
     };
@@ -17,14 +17,15 @@ class App extends Component {
   queryFlickr(query) {
     fetch('/flickr/' + query)
     .then(function(response) {
+      console.log("Primer then");
       if(response.ok) {
         return response.json();
       }
       throw new Error('Network response was not ok.');
     })
-    .then(function(data) {
+    .then(data => {
       console.log("Gotit!");
-      this.setState({ //Cambiar a un callback
+      this.setState({
         photos: data.photos
       });
     })
@@ -35,12 +36,12 @@ class App extends Component {
   render() {
     return (
       <div>
-      <Search queryFlickr={this.queryFlickr} />
-      <PhotoColumn photos={this.state.photos}/>
+      <Search queryFlickr={this.queryFlickr.bind(this)} />
+      <PhotoColumn photos={this.state.photos} />
       </div>
       )
-    
+
+    }
   }
-}
 
   export default App;

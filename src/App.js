@@ -15,7 +15,7 @@ class App extends Component {
     };
   }
 
-  querFlickr(quer) {
+  queryFlickr(query) {
     fetch('/flickr/' + query)
     .then(function(response) {
       if(response.ok) {
@@ -36,10 +36,12 @@ class App extends Component {
   render() {
     return (
       <div>
-      <Search querFlickr={this.querFlickr} />
+      <Search queryFlickr={this.queryFlickr} />
       <PhotoColumn photos={this.state.photos}/>
       </div>
       )
-    }
+    
+  }
+}
 
-    export default App;
+  export default App;

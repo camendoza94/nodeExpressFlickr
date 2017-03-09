@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './PhotoColumn.css';
+import Photo from './Photo';
 
 class PhotoColumn extends Component{
 	render(){
@@ -7,13 +7,11 @@ class PhotoColumn extends Component{
 			return(
 				<div className="col-md-2">
 				{this.props.photos.map((photo, index) => {
-						return <Photo photo={photo}/>
-				})};
+					return <Photo photo={photo}/>
+				})}
 				</div>
 				)
 			}
 		}
 	}
-}
-
-export default PhotoColumn;
+	export default PhotoColumn;

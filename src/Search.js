@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import './Search.css';
 
 class Search extends Component{
-	onstructor(props) {
+	constructor(props) {
 		super(props);
 		this.state = {
 			term: ''
-		}
+		};
 	}
 
 	buscar(termino) {
 		this.setState({term: termino});
-		this.props.querFlickr(termino);
+		this.props.queryFlickr(termino);
 	}
 
 

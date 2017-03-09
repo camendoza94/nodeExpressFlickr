@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './PhotoColumn.css';
 
-class PhotoColumn extends Component{
+class Photo extends Component{
 	getUrl() {
 		return "https://farm"+
 		this.props.photo.farm +
@@ -16,10 +15,10 @@ class PhotoColumn extends Component{
 	render(){
 		return (
 			<div>
-		<img src={getUrl}/>
+		<img src={this.getUrl}/>
 		</div>
 		)
 	}
 }
 
-export default PhotoColumn;
+export default Photo;

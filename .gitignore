@@ -37,8 +37,6 @@ build/Release
 node_modules/
 jspm_packages/
 data/
-server/api_secret.txt
-server/api_key.txt
 
 # Typescript v1 declaration files
 typings/

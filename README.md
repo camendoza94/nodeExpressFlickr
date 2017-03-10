@@ -1,11 +1,19 @@
-# Node + Express + create-react-app + flickrApi Boilerplate
+# Node + Express + React + Bootstrap + flickrApi project for Uniandes Web Development course 2017-10
 
-This is a simple project that helps bootstrap projects that use create-react-app + node + express + flickrapi
+This is my mid-term project for the Web Development class on Uniandes for 2017-10.
+It fetches images from [Flickr](flickr.com) based on an input, and creates a 'rainbow' with the images found.
 
-To use this boilerplate clone it:
+It uses the following technologies:
+* [Node](https://github.com/nodejs/node)
+* [Express](https://github.com/expressjs/express)
+* [React](https://github.com/facebook/react)
+* [Bootstrap](https://github.com/twbs/bootstrap)
+* [flickrApi](https://www.npmjs.com/package/flickrapi)
+
+To run this project clone it:
 
 ```
-git clone https://github.com/john-guerra/nodeExpressFlickr.git myApp
+git clone https://github.com/camendoza94/nodeExpressFlickr.git myApp
 cd myApp
 echo "my_flickr_api_key" > server/api_key.txt
 echo "my_flickr_api_secret" > server/api_secret.txt
@@ -26,6 +34,8 @@ And finally run the server
 node server
 ```
 And open [http://localhost:9000](http://localhost:9000)
+
+You can now use the search bar to view images from flickr as a rainbow.
 
 [http://localhost:9000/flickr/query](http://localhost:9000/flickr/query) points to an endpoint that will return a JSON object with the Flickr results. For more information on the Flickr API check:
 * The [Flickr API documentation](https://www.flickr.com/services/api/)

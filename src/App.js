@@ -23,9 +23,9 @@ class App extends Component {
     };
   }
 
-  queryFlickr(query) {
+  queryFlickr(query, tags) {
     for (const color of this.colors) {
-      fetch('/flickr/' + query + '?color_codes=' + color)
+      fetch('/flickr/' + query + '?tags=' + tags + '&color_codes=' + color)
       .then(function(response) {
         if(response.ok) {
           return response.json();
@@ -57,7 +57,7 @@ class App extends Component {
   <div className="col-lg-1 col-md-1">
   </div>
   {columns}
-  <div className="col-lg-1 col-md-1"">
+  <div className="col-lg-1 col-md-1">
   </div>
   </div>
   )

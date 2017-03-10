@@ -55,6 +55,7 @@ app.get('/flickr/:query', function (req, res) {
 		  	safe:1,
 		  	sort:"relevance",
 		  	text:req.params["query"],
+		  	tags:req.query["tags"],
 		  	color_codes:req.query["color_codes"]
 		  }, (err, data) => {
 		  	if (err) res.send(err);

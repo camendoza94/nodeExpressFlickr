@@ -1,7 +1,7 @@
 # Node + Express + React + Bootstrap + flickrApi project for Uniandes Web Development course 2017-10
 
 This is my mid-term project for the Web Development class on Uniandes for 2017-10.
-It fetches images from [Flickr](flickr.com) based on an input, and creates a 'rainbow' with the images found.
+It fetches images from [Flickr](flickr.com) based on an input of keyword an tags(comma-separated), and creates a 'rainbow' with the images found, using 12 different colors available on Flickr.
 
 It uses the following technologies:
 * [Node](https://github.com/nodejs/node)
@@ -35,7 +35,7 @@ node server
 ```
 And open [http://localhost:9000](http://localhost:9000)
 
-You can now use the search bar to view images from flickr as a rainbow.
+You can now use the search bar to view images from Flickr as a rainbow.
 
 [http://localhost:9000/flickr/query](http://localhost:9000/flickr/query) points to an endpoint that will return a JSON object with the Flickr results. For more information on the Flickr API check:
 * The [Flickr API documentation](https://www.flickr.com/services/api/)

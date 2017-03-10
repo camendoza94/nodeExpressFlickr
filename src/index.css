@@ -7,3 +7,11 @@ body {
 .column {
 	float: left;
 }
+.center{	
+    text-align: center;
+}
+
+.photo {
+	margin-top: 30px;
+	margin-bottom: 30px;;
+}

@@ -50,8 +50,15 @@ class App extends Component {
   }
   return (
   <div>
+  <div className="col-lg-12">
+  <h1 className="page-header center">Flickr Rainbow</h1>
+  </div>
   <Search queryFlickr={this.queryFlickr.bind(this)} />
+  <div className="col-lg-1 col-md-1">
+  </div>
   {columns}
+  <div className="col-lg-1 col-md-1"">
+  </div>
   </div>
   )
 

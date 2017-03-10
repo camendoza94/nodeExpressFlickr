@@ -14,8 +14,8 @@ class Photo extends Component{
 	}
 	render(){
 		return (
-			<div>
-		<img src={this.getUrl()}/>
+		<div className="photo img-responsive img-thumbnail">
+		<img src={this.getUrl()} alt="Image from Flickr"/>
 		</div>
 		)
 	}

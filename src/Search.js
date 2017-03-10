@@ -16,17 +16,22 @@ class Search extends Component{
 		this.props.queryFlickr(this.state.term);
 	}
 
-
 	render() {
 		return(
-			<div> 
-			<input type="text" value={this.state.term} onChange={this.handleChange.bind(this)}/>
+			<div className="search center"> 
+			<input type="text" onKeyPress={this._handleKeyPress.bind(this)} value={this.state.term} onChange={this.handleChange.bind(this)}/>
 			<button type="button" onClick={this.search.bind(this)}>
 			<span className="glyphicon glyphicon-search"></span>
 			</button>
 			</div>
 			)
 	}
+
+	_handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      this.search();
+    }
+  }
 }
 
 export default Search;

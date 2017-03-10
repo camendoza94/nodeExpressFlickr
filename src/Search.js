@@ -14,7 +14,7 @@ class Search extends Component{
 	}
 
 	handleChangeTags(event) {
-		this.setState({tags: event.target.value});
+		this.setState({tags: event.target.value.replace(/ /g,",")});
 	}
 
 	search() {

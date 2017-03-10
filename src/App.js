@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     //CAmbiar los colores
     super(props);
-    this.colors=[0,1,2,3,4,5,6,7,8,9];
+    this.colors=[0,1,2,3,4,5,6,7,8,9,"a","b"];
     this.state = {
       0: [],
       1: [],
@@ -19,10 +19,11 @@ class App extends Component {
       6: [],
       7: [],
       8: [],
-      9: []
+      9: [],
+      a: [],
+      b: []
     };
   }
-
   queryFlickr(query, tags) {
     for (const color of this.colors) {
       fetch('/flickr/' + query + '?tags=' + tags + '&color_codes=' + color)
@@ -56,7 +57,9 @@ class App extends Component {
   <Search queryFlickr={this.queryFlickr.bind(this)} />
   <div className="col-lg-1 col-md-1">
   </div>
-  {columns}
+  <div className="col-lg-12">
+    {columns}
+  </div>
   <div className="col-lg-1 col-md-1">
   </div>
   </div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Search from './Search';
 import PhotoColumn from './PhotoColumn';
@@ -7,23 +6,26 @@ import PhotoColumn from './PhotoColumn';
 class App extends Component {
 
   constructor(props) {
+    //CAmbiar los colores
     super(props);
-    this.colors=["red","orange", "yellow", "green", "blue","indigo", "violet" ];
+    this.colors=[0,1,2,3,4,5,6,7,8,9];
     this.state = {
-      red: [],
-      orange: [],
-      yellow: [],
-      green: [],
-      blue: [],
-      indigo: [],
-      violet: []
+      0: [],
+      1: [],
+      2: [],
+      3: [],
+      4: [],
+      5: [],
+      6: [],
+      7: [],
+      8: [],
+      9: []
     };
   }
 
   queryFlickr(query) {
-    var i = 0;
     for (const color of this.colors) {
-      fetch('/flickr/' + query + ',' + color)
+      fetch('/flickr/' + query + '?color_codes=' + color)
       .then(function(response) {
         if(response.ok) {
           return response.json();
@@ -39,7 +41,6 @@ class App extends Component {
       .catch(function(error) {
         console.log('There has been a problem with your fetch operation: ' + error.message);
       });
-      i++;
     }
   }
   render() {

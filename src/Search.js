@@ -8,16 +8,22 @@ class Search extends Component{
 		};
 	}
 
-	buscar(termino) {
-		this.setState({term: termino});
-		this.props.queryFlickr(termino);
+	handleChange(event) {
+		this.setState({term: event.target.value});
+	}
+
+	search() {
+		this.props.queryFlickr(this.state.term);
 	}
 
 
 	render() {
 		return(
 			<div> 
-			<input type="text" onChange={(event) => this.buscar(event.target.value)}/>
+			<input type="text" value={this.state.term} onChange={this.handleChange.bind(this)}/>
+			<button type="button" onClick={this.search.bind(this)}>
+			<span className="glyphicon glyphicon-search"></span>
+			</button>
 			</div>
 			)
 	}

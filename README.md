@@ -1,7 +1,7 @@
 # Node + Express + React + Bootstrap + flickrApi project for Uniandes Web Development course 2017-10
 
 This is my mid-term project for the Web Development class on Uniandes for 2017-10.
-It fetches images from [Flickr](flickr.com) based on an input of keyword an tags(comma-separated), and creates a 'rainbow' with the images found, using 12 different colors available on Flickr.
+It fetches images from [Flickr](flickr.com) based on an input of keywords and **tags(comma-separated)**, and creates a 'rainbow' with the images found, using **12** different colors available on Flickr.
 
 It uses the following technologies:
 * [Node](https://github.com/nodejs/node)

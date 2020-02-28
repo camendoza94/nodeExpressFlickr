@@ -3,21 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "express": "^4.15.2",
-    "flickrapi": "^0.6.0",
-    "morgan": "^1.8.1",
-    "node": "0.0.0",
-    "react": "^15.4.2",
-    "react-bootstrap": "^0.30.8",
-    "react-dom": "^15.4.2",
-    "react-router": "^3.0.2",   
-    "react-scripts": "0.9.4"
+    "express": "^4.17.1",
+    "flickr-sdk": "^3.9.0",
+    "morgan": "^1.9.1",
+    "react": "^16.13.0",
+    "react-bootstrap": "^0.33.1",
+    "react-dom": "^16.13.0",
+    "react-router": "^5.1.2",
+    "react-scripts": "3.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "postinstall": "react-scripts build"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:9000",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
